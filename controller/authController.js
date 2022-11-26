@@ -50,7 +50,7 @@ const login = expressHandler(async (req,res) => {
     const refreshToken = jwt.sign(
         {'UserInfo':{'userId':user._id,'username': user.username,'roles': user.roles, 'status': user.active}},
         process.env.REFRESH_TOKEN_SECRET,
-        {expiresIn: "1d"}
+        {expiresIn: "7d"}
     )
 
     // user.refreshToken = refreshToken;
@@ -61,7 +61,7 @@ const login = expressHandler(async (req,res) => {
       httpOnly: true,
       sameSite: "None",
       secure: true,
-      maxAge: 60 * 60 * 24 * 7,//this will be 7days
+      maxAge: 7 * 24 * 60 * 60 * 1000,//this will be 7days
     });
 
     
