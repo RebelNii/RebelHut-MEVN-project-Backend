@@ -1,5 +1,7 @@
 const allowedOrigins = [   
-    'https://rebelhut.onrender.com',  
+    'https://rebelhut.onrender.com', 
+    'https://rebelhut-api.onrender.com',
+    'http://localhost:8080',
 
 ]
 

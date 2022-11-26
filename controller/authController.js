@@ -60,7 +60,7 @@ const login = expressHandler(async (req,res) => {
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
       sameSite: "None",
-    //   secure: true,
+      secure: true,
       maxAge: 7 * 60 * 60 * 1000,//this will be 7days
     });
 
@@ -123,7 +123,7 @@ const refresh = expressHandler(async(req,res)=> {
 const logout = expressHandler(async (req,res) => {
     const cookies = req.cookies
     if (!cookies?.jwt) return res.sendStatus(204) //No content , secure: true
-    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None' })
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true })
     res.json({ message: 'Cookie cleared' })
 })
 
