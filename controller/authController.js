@@ -61,7 +61,7 @@ const login = expressHandler(async (req,res) => {
       httpOnly: true,
       sameSite: "None",
       secure: true,
-      maxAge: 7 * 24 * 60 * 60 * 1000,//this will be 7days
+      maxAge: 60 * 60 * 24 * 7,//this will be 7days
     });
 
     
