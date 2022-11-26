@@ -28,7 +28,7 @@ const login = expressHandler(async (req,res) => {
     }
 
     //
-    res.clearCookie("jwt");
+    // res.clearCookie("jwt");
 
     //
     const passCompare = await bcrypt.compare(password, user.password)
@@ -48,7 +48,7 @@ const login = expressHandler(async (req,res) => {
         {expiresIn: "10m"}
     )
     const refreshToken = jwt.sign(
-        {'UserInfo':{'user-id':user._id,'username': user.username,'roles': user.roles, 'status': user.active}},
+        {'UserInfo':{'userId':user._id,'username': user.username,'roles': user.roles, 'status': user.active}},
         process.env.REFRESH_TOKEN_SECRET,
         {expiresIn: "1d"}
     )
