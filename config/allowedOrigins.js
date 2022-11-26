@@ -1,6 +1,6 @@
 const allowedOrigins = [   
     'https://rebelhut.onrender.com',
-    'https://rebelhut-api.onrender.com'   
+    'https://rebelhut-api.onrender.com',  
 
 ]
 
