@@ -59,9 +59,9 @@ const login = expressHandler(async (req,res) => {
     
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
-      sameSite: "None",
+      sameSite: "lax",
       secure: true,
-      maxAge: 7 * 60 * 60 * 1000,//this will be 7days
+      maxAge: 7 * 24 * 60 * 60 * 1000,//this will be 7days
     });
 
     
